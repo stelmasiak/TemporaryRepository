@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="dev.automade.recrutation.ui.HelloController">
+    <padding>
+        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+    </padding>
+
+    <ToggleButton text="ABC" fx:id="startToggleButton"/>
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <RadioButton text="1 minuta" selected="true" userData="1">
+            <toggleGroup>
+                <ToggleGroup fx:id="formatterToggleGroup"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton text="5 minut" toggleGroup="$formatterToggleGroup" userData="2"/>
+        <RadioButton text="10 minut" toggleGroup="$formatterToggleGroup" userData="3"/>
+    </HBox>
+
+    <Label fx:id="mouseDistanceLabel"/>
+    <Label fx:id="mouseClicksLabel"/>
+    <Label fx:id="keyboardPressedLabel"/>
+
+    <LineChart fx:id="lineChart">
+        <xAxis>
+            <CategoryAxis label=""/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Dystans" />
+        </yAxis>
+    </LineChart>
+</VBox>
